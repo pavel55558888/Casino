@@ -17,8 +17,6 @@ public class ChartService {
         while (true){
             ThreadMainChart threadMainChart = new ThreadMainChart();
             threadMainChart.join();
-
-
         }
     }
 }
