@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart</title>
+  <link rel="icon" href="/image/logo2.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="/image/logo2.jpg" type="image/x-icon">
+
+  <link rel="stylesheet" th:href="@{/main.css}">
+
+  <meta name="favicon" content="/image/logo2.jpg">
+
+
+</head>
+<body>
+
+<div th:replace="~{layouts/header :: header}"></div>
+
+<main class="container">
+
+  <div class="play_chart">
+
+    <div class="bet">
+
+      <h3>Ставка</h3>
+
+      <form action="">
+        <input type="number" required name="bet" placeholder="0.00">
+        <button>Играть</button>
+      </form>
+
+    </div>
+
+    <div class="chart">
+        <h1 th:text="${x}"/>
+    </div>
+
+  </div>
+
+
+</main>
+
+<div th:replace="~{layouts/footer :: footer}"></div>
+
+</body>
+</html>

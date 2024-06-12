@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Casino</title>
+    <link rel="icon" href="/image/logo2.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="/image/logo2.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{/main.css}">
+
+    <meta name="favicon" content="/image/logo2.jpg">
+
+
+</head>
+<body>
+
+<div th:replace="~{layouts/header :: header}"></div>
+
+<main class="container">
+
+
+    <h3 style="margin-left: 10%; margin-bottom: 50px">Игры Riches</h3>
+
+    <div class="play">
+
+        <div class="img_play">
+            <a th:href="@{/chart}">
+                <img class="img_play" src="/image/График,%20который%20растет%20вверх.jpeg" alt="">
+            </a>
+        </div>
+
+        <div class="img_play">
+            <a href="">
+                <img class = "img_play" src="/image/Кубики%20игральные.jpeg" alt="">
+            </a>
+        </div>
+
+        <div class="img_play">
+            <a href="">
+                <img class = "img_play" src="/image/Поле%205%20на%205.jpeg" alt="">
+            </a>
+        </div>
+
+    </div>
+
+
+
+</main>
+
+<div th:replace="~{layouts/footer :: footer}"></div>
+
+</body>
+</html>

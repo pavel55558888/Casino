@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+}
+
+body{
+    background: #212323;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 500ms ease;
+}
+
+a:hover{
+    color: #8C8C8C;
+}
+
+header.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+header .logo a {
+    position: relative;
+    top: -10px;
+    left: -10px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Diplomata SC', serif;
+}
+
+header .logo:hover{
+    color: #8C8C8C;
+    cursor: pointer;
+}
+
+header nav a {
+    margin-left: 15px;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+footer{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: white;
+}
+.logo{
+    width: 15%;
+    border-radius: 30px;
+    margin-bottom: -10px;
+}
+
+.img_play{
+    width: 70%;
+    border-radius: 30px;
+}
+
+.play{
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form > input {
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #212323;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form > button{
+    padding: 15px 50px;
+    color: white;
+    background-color: rgba(65, 255, 255, 0.9);
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bet{
+    background-color: #353838;
+    padding: 50px;
+    width: 30%;
+    border-radius: 15px 0 0 15px;
+}
+
+.play_chart{
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.chart{
+    width: 69.8%;
+    margin-left: 0.2%;
+    background-color: #353838;
+    border-radius: 0 15px 15px 0;
+}
