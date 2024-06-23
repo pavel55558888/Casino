@@ -1,43 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Chart</title>
-  <link rel="icon" href="/image/logo2.jpg" type="image/x-icon">
-  <link rel="shortcut icon" href="/image/logo2.jpg" type="image/x-icon">
-
   <link rel="stylesheet" th:href="@{/main.css}">
-
-  <meta name="favicon" content="/image/logo2.jpg">
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div th:replace="~{layouts/header :: header}"></div>
 
 <main class="container">
-
   <div class="play_chart">
-
     <div class="bet">
-
       <h3>Ставка</h3>
-
-      <form action="">
-        <input type="number" required name="bet" placeholder="0.00">
-        <button>Играть</button>
+      <form th:action="@{/chart_bet}" method="post" id="betForm">
+        <input type="number" id="betInput" required name="bet" placeholder="1.1" step="0.1" min="1.5">
+        <button type="submit">Играть</button>
       </form>
-
     </div>
 
+    <script>
+      $(document).ready(function() {
+        function fetchNumber() {
+          $.ajax({
+            url: '/chart/number',
+            type: 'GET',
+            success: function(number) {
+              $('#number').text(number.toFixed(1));
+            },
+            error: function(error) {
+              console.error("Ошибка при получении числа в шаблоне chart", error);
+            }
+          });
+        }
+
+        fetchNumber();
+        setInterval(fetchNumber, 15000);
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $("#betForm").submit(function(event) {
+          event.preventDefault();
+          var bet = $("#betInput").val();
+
+          $.ajax({
+            type: "POST",
+            url: "/chart_bet",
+            data: { bet: bet },
+            success: function(response) {
+              console.log(response);
+            },
+            error: function(xhr, status, error) {
+              console.error("Ошибка: " + error);
+            }
+          });
+        });
+      });
+    </script>
+
+
+
     <div class="chart">
-        <h1 th:text="${x}"/>
+        <h1 id="number"/>
     </div>
 
   </div>
-
-
 </main>
 
 <div th:replace="~{layouts/footer :: footer}"></div>
